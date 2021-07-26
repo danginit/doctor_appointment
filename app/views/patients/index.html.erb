@@ -17,7 +17,9 @@
       <tr>
         <td><%= patient.first_name %></td>
         <td><%= patient.last_name %></td>
-        
+        <td><%= link_to 'Show', patient_path(patient) %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patients_path(patient), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

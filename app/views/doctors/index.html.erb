@@ -18,7 +18,9 @@
         <td><%= doctor.first_name %></td>
         <td><%= doctor.last_name %></td>
         <td><%= link_to 'Book Appointment', new_appointment_path %></td>
-        
+        <td><%= link_to 'Show', doctors_path(doctor) %></td>
+        <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
+        <td><%= link_to 'Destroy', doctors_path(doctor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -38,7 +38,7 @@ class DoctorsController < ApplicationController
   def update
     respond_to do |format|
       if @doctor.update(doctor_params)
-        format.html { redirect_to @doctor, notice: "Doctor was successfully updated." }
+        format.html { redirect_to doctor_path(@doctor), notice: "Doctor was successfully updated." }
         format.json { render :show, status: :ok, location: @doctor }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,11 +59,11 @@ class DoctorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_doctor
-      @doctor = Doctor.find(params[:id])
+      @doctor = User.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def doctor_params
-      params.require(:doctor).permit(:first_name, :last_name, :user_id)
+      params.require(:user).permit(:first_name, :last_name)
     end
 end
