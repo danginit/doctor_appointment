@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :patients
   has_many :doctors
+  has_many :appointments
 
 
   def self.from_omniauth(auth)
