@@ -1,19 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Doctor:</strong>
-  <%= @appointment.doctor_id %>
-</p>
+<%= render 'form', appointment: @appointment %>
 
-<p>
-  <strong>Patient:</strong>
-  <%= @appointment.patient_id %>
-</p>
 
-<p>
-  <strong>Appointment date:</strong>
-  <%= @appointment.appointment_date %>
-</p>
-
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Back', appointments_path %>
+<%= link_to 'Edit', edit_appointment_path(@appointment), class: 'btn btn-info' %> |
+<%= link_to 'Back', appointments_path, class: 'btn btn-warning' %>

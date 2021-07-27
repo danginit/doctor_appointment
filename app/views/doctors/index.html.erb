@@ -2,13 +2,12 @@
 
 <h1>Doctors</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>First name</th>
       <th>Last name</th>
-      <th>User</th>
-      <th colspan="4"></th>
+      <th colspan="4" style="text-align: center;">Actions</th>
     </tr>
   </thead>
 
@@ -17,10 +16,10 @@
       <tr>
         <td><%= doctor.first_name %></td>
         <td><%= doctor.last_name %></td>
-        <td><%= link_to 'Book Appointment', new_appointment_path %></td>
-        <td><%= link_to 'Show', doctors_path(doctor) %></td>
-        <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
-        <td><%= link_to 'Destroy', doctors_path(doctor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Book Appointment', appointment_path(doctor), class: 'btn btn-outline-secondary' %></td>
+        <td><%= link_to 'Show', doctor_path(doctor), class: 'btn btn-outline-info' %></td>
+        <td><%= link_to 'Edit', edit_doctor_path(doctor), class: 'btn btn-outline-warning' %></td>
+        <td><%= link_to 'Destroy', doctors_path(doctor), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %></td>
       </tr>
     <% end %>
   </tbody>

@@ -2,5 +2,5 @@
 
 <%= render 'form', appointment: @appointment %>
 
-<%= link_to 'Show', @appointment %> |
-<%= link_to 'Back', appointments_path %>
+<%= link_to 'Show', appointments_path(@appointment), class: 'btn btn-outline-info' %> |
+<%= link_to 'Back', appointments_path, class: 'btn btn-warning' %>
